@@ -17,12 +17,11 @@
 import React from "react";
 import { Meta, Story } from "@storybook/react";
 
-import ActionsBar from "./ActionsBar";
-import { ActionsBarProps } from "./ActionsBar.types";
+import ButtonGroup from "./ButtonGroup";
+import { ButtonGroupProps } from "./ButtonGroup.types";
 
 import StoryThemeProvider from "../../utils/StoryThemeProvider";
 import GlobalStyles from "../GlobalStyles/GlobalStyles";
-import Link from "../Link/Link";
 import Button from "../Button/Button";
 import TestIcon from "../../utils/TestIcon";
 import Tooltip from "../Tooltip/Tooltip";
@@ -32,15 +31,15 @@ import ExpandMenu from "../ExpandMenu/ExpandMenu";
 import AddIcon from "../Icons/AddIcon";
 
 export default {
-  title: "MDS/Forms/ActionsBar",
-  component: ActionsBar,
+  title: "MDS/Forms/ButtonGroup",
+  component: ButtonGroup,
   argTypes: {},
-} as Meta<typeof ActionsBar>;
+} as Meta<typeof ButtonGroup>;
 
-const Template: Story<ActionsBarProps> = (args) => (
+const Template: Story<ButtonGroupProps> = (args) => (
   <StoryThemeProvider>
     <GlobalStyles />
-    <ActionsBar {...args}>
+    <ButtonGroup {...args}>
       <Button id={"test"} icon={<TestIcon />} iconLocation={"start"}>
         Button one
       </Button>
@@ -76,7 +75,7 @@ const Template: Story<ActionsBarProps> = (args) => (
           Button one
         </Button>
       </ExpandMenu>
-    </ActionsBar>
+    </ButtonGroup>
   </StoryThemeProvider>
 );
 

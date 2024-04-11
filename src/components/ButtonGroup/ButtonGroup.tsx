@@ -17,10 +17,10 @@
 import React, { FC } from "react";
 import styled from "styled-components";
 import get from "lodash/get";
-import { ActionsBarProps } from "./ActionsBar.types";
+import { ButtonGroupProps } from "./ButtonGroup.types";
 import { lightV2 } from "../../global/themes";
 
-const ActionsBarMain = styled.div<ActionsBarProps>(
+const ActionsBarMain = styled.div<ButtonGroupProps>(
   ({ theme, sx, displayLabels }) => ({
     display: "inline-flex",
     flexDirection: "row" as const,
@@ -130,7 +130,7 @@ const ActionsBarMain = styled.div<ActionsBarProps>(
   }),
 );
 
-const ActionsBar: FC<ActionsBarProps> = ({
+const ButtonGroup: FC<ButtonGroupProps> = ({
   displayLabels = true,
   sx,
   children,
@@ -143,4 +143,4 @@ const ActionsBar: FC<ActionsBarProps> = ({
   );
 };
 
-export default ActionsBar;
+export default ButtonGroup;
