@@ -1,6 +1,6 @@
 import * as React from "react";
 import { SVGProps } from "react";
-declare const WarningAlertIcon: (
+declare const PieUsageIcon: (
   props: SVGProps<SVGSVGElement>,
 ) => React.JSX.Element;
-export default WarningAlertIcon;
+export default PieUsageIcon;
