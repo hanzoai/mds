@@ -790,19 +790,19 @@ const I = {
     buttonNeutralColorTextHover: "#000000E0",
   },
   O = {
-    bgColor: B.mainBackgroundColor,
-    fontColor: B.fontColor,
+    bgColor: b["Color/Neutral/colorBgBase"].lightMode,
+    fontColor: b["Color/Neutral/Text/colorTextLabel"].lightMode,
     borderColor: b["Color/Neutral/Border/colorBorderMinimal"].lightMode,
-    bulletColor: I.bulletColor,
-    logoColor: I.mainRed,
-    logoLabelColor: I.logoLabel,
-    logoLabelInverse: I.logoLabelInverse,
-    loaderColor: I.loaderColor,
-    linkColor: B.linkColor,
-    secondaryLinkColor: B.modalCloseColor,
-    boxBackground: I.boxBackground,
-    mutedText: B.mutedText,
-    secondaryText: I.mainGrey,
+    bulletColor: b["Color/Neutral/Text/colorTextSecondary"].lightMode,
+    logoColor: b["Color/Brand/_minio/Raspberry"].lightMode,
+    logoLabelColor: b["Color/Neutral/Text/colorTextHeading"].lightMode,
+    logoLabelInverse: b["Color/Neutral/Text/colorTextLightSolid"].lightMode,
+    loaderColor: b["Color/Base/Royal/10"].lightMode,
+    linkColor: b["Color/Brand/Primary/colorPrimaryText"].lightMode,
+    secondaryLinkColor: b["Color/Brand/Neutral/colorPrimaryText"].lightMode,
+    boxBackground: b["Color/Neutral/Bg/colorBgShell"].lightMode,
+    mutedText: b["Color/Neutral/Text/colorTextDisabled"].lightMode,
+    secondaryText: b["Color/Brand/Neutral/colorPrimaryText"].lightMode,
     colors: S("lightMode"),
     borderRadius: R,
     paddingSizes: y,
@@ -813,15 +813,15 @@ const I = {
       backgroundColor: b["Color/Neutral/Bg/colorBgContainer"].lightMode,
     },
     signalColors: {
-      main: B.switchBG,
-      danger: B.danger,
-      good: B.green,
-      info: B.secondaryBlue,
-      warning: B.orange,
-      disabled: B.disabledGrey,
-      dark: B.fontColor,
-      clear: I.white,
-      selectBlue: B.menuSelectionColor,
+      main: b["Color/Brand/Primary/colorPrimaryText"].lightMode,
+      danger: b["Color/Brand/Error/colorPrimaryText"].lightMode,
+      good: b["Color/Brand/Success/colorPrimaryText"].lightMode,
+      info: b["Color/Brand/Primary/colorPrimaryText"].lightMode,
+      warning: b["Color/Brand/Warning/colorPrimaryText"].lightMode,
+      disabled: b["Color/Neutral/Text/colorTextDisabled"].lightMode,
+      dark: b["Color/Neutral/Text/colorTextLabel"].lightMode,
+      clear: b["Color/Neutral/colorBgBase"].lightMode,
+      selectBlue: b["Color/Brand/Primary/colorPrimaryBgHover"].lightMode,
     },
     buttons: {
       primary: {
@@ -1436,6 +1436,8 @@ const I = {
       background: b["Color/Neutral/Bg/colorBgContainer"].lightMode,
       secondaryBackground: b["Color/Neutral/Bg/colorBgContainer"].lightMode,
       secondaryLabelColor: b["Color/Brand/Neutral/colorPrimaryText"].lightMode,
+      selectedBackground: b["Color/Brand/Control/colorBgActive"].lightMode,
+      selectedLabelColor: b["Color/Brand/Info/colorPrimaryActive"].lightMode,
     },
     dropdownOptions: {
       optionLabel: b["Color/Neutral/Text/colorTextLabel"].lightMode,
@@ -1533,31 +1535,38 @@ const I = {
     },
   },
   D = {
-    bgColor: Z.dark,
-    fontColor: Z.defaultFontColor,
-    borderColor: Z.borderColor,
-    bulletColor: Z.bulletColor,
-    logoColor: Z.mainRed,
-    logoLabelColor: Z.logoLabel,
-    logoLabelInverse: Z.logoLabelInverse,
-    loaderColor: Z.loaderColor,
-    linkColor: Z.linkColor,
-    boxBackground: Z.boxBackground,
-    mutedText: Z.mutedText,
-    secondaryText: Z.mainGrey,
+    bgColor: b["Color/Neutral/colorBgBase"].darkMode,
+    fontColor: b["Color/Neutral/Text/colorTextLabel"].darkMode,
+    borderColor: b["Color/Neutral/Border/colorBorderMinimal"].darkMode,
+    bulletColor: b["Color/Neutral/Text/colorTextSecondary"].darkMode,
+    logoColor: b["Color/Brand/_minio/Raspberry"].darkMode,
+    logoLabelColor: b["Color/Neutral/Text/colorTextHeading"].darkMode,
+    logoLabelInverse: b["Color/Neutral/Text/colorTextLightSolid"].darkMode,
+    loaderColor: b["Color/Base/Royal/10"].darkMode,
+    linkColor: b["Color/Brand/Primary/colorPrimaryText"].darkMode,
+    secondaryLinkColor: b["Color/Brand/Neutral/colorPrimaryText"].darkMode,
+    boxBackground: b["Color/Neutral/Bg/colorBgShell"].darkMode,
+    mutedText: b["Color/Neutral/Text/colorTextDisabled"].darkMode,
+    secondaryText: b["Color/Brand/Neutral/colorPrimaryText"].darkMode,
     colors: S("darkMode"),
     borderRadius: R,
     paddingSizes: y,
     boxShadows: M,
+    box: {
+      border: "transparent",
+      shadow: "0px 2px 2px 0px rgba(121, 135, 151, 0.15)",
+      backgroundColor: b["Color/Neutral/Bg/colorBgContainer"].darkMode,
+    },
     signalColors: {
-      main: Z.mainGrey,
-      danger: Z.mainRed,
-      good: Z.mainGreen,
-      info: Z.secondActionHover,
-      warning: Z.mainOrange,
-      disabled: Z.disabledGrey,
-      dark: Z.dark,
-      clear: Z.mainWhite,
+      main: b["Color/Brand/Primary/colorPrimaryText"].darkMode,
+      danger: b["Color/Brand/Error/colorPrimaryText"].darkMode,
+      good: b["Color/Brand/Success/colorPrimaryText"].darkMode,
+      info: b["Color/Brand/Primary/colorPrimaryText"].darkMode,
+      warning: b["Color/Brand/Warning/colorPrimaryText"].darkMode,
+      disabled: b["Color/Neutral/Text/colorTextDisabled"].darkMode,
+      dark: b["Color/Neutral/Text/colorTextLabel"].darkMode,
+      clear: b["Color/Neutral/colorBgBase"].darkMode,
+      selectBlue: b["Color/Brand/Primary/colorPrimaryBgHover"].darkMode,
     },
     buttons: {
       primary: {
@@ -2170,6 +2179,8 @@ const I = {
       background: b["Color/Neutral/Bg/colorBgContainer"].darkMode,
       secondaryBackground: b["Color/Neutral/Bg/colorBgContainer"].darkMode,
       secondaryLabelColor: b["Color/Brand/Neutral/colorPrimaryText"].darkMode,
+      selectedBackground: b["Color/Brand/Control/colorBgActive"].darkMode,
+      selectedLabelColor: b["Color/Brand/Info/colorPrimaryActive"].darkMode,
     },
     dropdownOptions: {
       optionLabel: b["Color/Neutral/Text/colorTextLabel"].darkMode,
@@ -2657,7 +2668,7 @@ const hn = require("../assets/fonts/Geist/Geist-Black.woff2"),
   Ln = require("../assets/fonts/Geist/Geist-Medium.woff2"),
   bn = require("../assets/fonts/Geist/Geist-UltraLight.woff2"),
   Mn = g`
-    ${({ theme: e }) => `\n    /* Fonts */\n    @font-face {\n      font-family: "Geist";\n      src: url(${gn}) format("woff2");\n      font-weight: bold;\n      font-style: normal;\n      font-display: swap;\n    }\n    \n    @font-face {\n      font-family: "Geist";\n      src: url(${Ln}) format("woff2");\n      font-weight: 500;\n      font-style: normal;\n      font-display: swap;\n    }\n    \n    @font-face {\n      font-family: "Geist";\n      src: url(${wn}) format("woff2");\n      font-weight: 600;\n      font-style: normal;\n      font-display: swap;\n    }\n    \n    @font-face {\n      font-family: "Geist";\n      src: url(${fn}) format("woff2");\n      font-weight: 300;\n      font-style: normal;\n      font-display: swap;\n    }\n    \n    @font-face {\n      font-family: "Geist";\n      src: url(${bn}) format("woff2");\n      font-weight: 200;\n      font-style: normal;\n      font-display: swap;\n    }\n    \n    @font-face {\n      font-family: "Geist";\n      src: url(${hn}) format("woff2");\n      font-weight: 900;\n      font-style: normal;\n      font-display: swap;\n    }\n    \n    @font-face {\n      font-family: "Geist";\n      src: url(${vn}) format("woff2");\n      font-weight: normal;\n      font-style: normal;\n      font-display: swap;\n    }\n    \n    @font-face {\n      font-family: "Geist";\n      src: url(${En}) format("woff2");\n      font-weight: 100;\n      font-style: normal;\n      font-display: swap;\n    }\n    \n    /* Main Page styling */\n    \n    *, *::before, *::after {\n       box-sizing: inherit;\n       outline:0;\n    }\n    \n    html {\n        box-sizing: border-box;\n        -webkit-text-size-adjust: 100%;\n        -webkit-font-smoothing: antialiased;\n        -moz-osx-font-smoothing: grayscale;\n    }\n    \n    body {\n        background-color: ${mn(e, "bgColor", B.mainBackgroundColor)};\n        color: ${mn(e, "fontColor", B.fontColor)};\n        height: 100vh;\n        width: 100vw;\n        font-family: 'Geist', sans-serif;\n        margin: 0;\n        -webkit-font-smoothing: antialiased;\n        -moz-osx-font-smoothing: grayscale;\n        font-weight: 400;\n        font-size: 14px;\n        line-height: 1.5;\n        transition: background-color 0s\n    }\n    \n    fieldset, section {\n        border: 1px solid ${mn(e, "borderColor", B.borderColor)};\n        border-radius: 3px;\n        background-color: transparent;\n        padding: 25px;\n    }\n    \n    a {\n        color: ${mn(e, "linkColor", B.linkColor)};\n    }\n    \n    a:hover {\n        color: ${mn(e, "linkColor", B.linkColor)};\n    }\n    \n    hr {\n        border-top: 0;\n        border-left: 0;\n        border-right: 0;\n        border-bottom: 1px solid ${mn(e, "borderColor", B.borderColor)};\n        background-color: transparent;\n    }\n    \n    ul {\n        padding-left: 20px;\n        list-style: none;\n        \n        li:not([class*="Mui"])::before {\n          content: '￭';\n          color: ${mn(e, "bulletColor", I.bulletColor)};\n          font-size: 20px;\n          display: inline-block;\n          width: 1em;\n          margin-left: -1em;\n        }\n        \n        ul {\n          list-style: none;\n          li:not([class*="Mui"])::before {\n            content: "￮";\n            color: ${mn(e, "bulletColor", I.bulletColor)},\n            font-size: 20px;\n            display: inline-block;\n            width: 1em;\n            margin-left: -1em;\n          }\n        }\n      }\n      \n    button:active, button:focus, input: active, input:focus {\n        outline: 0;\n    }\n    \n    .min-icon {\n        width: 26px;\n    }\n    \n    #root: {\n        height: 100%;\n        width: 100%;\n        display: flex;\n        flex-flow: column;\n        align-items: stretch;\n      }\n    \n    #preload {\n      display: none;\n    }\n    \n    #loader-block {\n      display: flex;\n      flex-direction: column;\n      width: 100%;\n      height: 100vh;\n      justify-content: center;\n      align-items: center;\n    }\n    \n    .muted {\n        color: ${mn(e, "mutedText", B.mutedText)};\n        font-size: 14px;\n    }\n    \n    .error {\n        color: ${mn(e, "signalColors.danger", B.danger)};\n    }\n    \n    /* Text Vars */\n    .SM_Normal {\n        font-family: 'Geist', sans-serif;\n        font-size: 12px;\n        font-style: normal;\n        font-weight: 400;\n        line-height: 16px;\n        letter-spacing: 0.5px;\n    }\n    .SM_Strong {\n        font-family: 'Geist', sans-serif;\n        font-size: 12px;\n        font-style: normal;\n        font-weight: 600;\n        line-height: 16px;\n        letter-spacing: 0.5px;\n    }\n    .Base_Normal {\n        font-family: 'Geist', sans-serif;\n        font-size: 14px;\n        font-style: normal;\n        font-weight: 400;\n        line-height: 16px;\n        letter-spacing: 0.5px;\n    }\n    .Base_Strong {\n        font-family: 'Geist', sans-serif;\n        font-size: 14px;\n        font-style: normal;\n        font-weight: 600;\n        line-height: 20px; \n        letter-spacing: 0.16px;\n    }\n    .LG_Normal {\n        font-family: 'Geist', sans-serif;\n        font-size: 16px;\n        font-style: normal;\n        font-weight: 400;\n        line-height: 20px;\n        letter-spacing: 0.16px;\n    }\n    .LG_Strong {\n        font-family: 'Geist', sans-serif;\n        font-size: 16px;\n        font-style: normal;\n        font-weight: 600;\n        line-height: 24px;\n        letter-spacing: 0.16px;\n    }\n    .XL_Normal {\n        font-family: 'Geist', sans-serif;\n        font-size: 20px;\n        font-style: 400;\n        font-weight: 84;\n        line-height: 28px;\n    }\n    .XL_Strong {\n        font-family: 'Geist', sans-serif;\n        font-size: 20px;\n        font-style: normal;\n        font-weight: 600;\n        line-height: 28px;\n    }\n    `}
+    ${({ theme: e }) => `\n    /* Fonts */\n    @font-face {\n      font-family: "Geist";\n      src: url(${gn}) format("woff2");\n      font-weight: bold;\n      font-style: normal;\n      font-display: swap;\n    }\n    \n    @font-face {\n      font-family: "Geist";\n      src: url(${Ln}) format("woff2");\n      font-weight: 500;\n      font-style: normal;\n      font-display: swap;\n    }\n    \n    @font-face {\n      font-family: "Geist";\n      src: url(${wn}) format("woff2");\n      font-weight: 600;\n      font-style: normal;\n      font-display: swap;\n    }\n    \n    @font-face {\n      font-family: "Geist";\n      src: url(${fn}) format("woff2");\n      font-weight: 300;\n      font-style: normal;\n      font-display: swap;\n    }\n    \n    @font-face {\n      font-family: "Geist";\n      src: url(${bn}) format("woff2");\n      font-weight: 200;\n      font-style: normal;\n      font-display: swap;\n    }\n    \n    @font-face {\n      font-family: "Geist";\n      src: url(${hn}) format("woff2");\n      font-weight: 900;\n      font-style: normal;\n      font-display: swap;\n    }\n    \n    @font-face {\n      font-family: "Geist";\n      src: url(${vn}) format("woff2");\n      font-weight: normal;\n      font-style: normal;\n      font-display: swap;\n    }\n    \n    @font-face {\n      font-family: "Geist";\n      src: url(${En}) format("woff2");\n      font-weight: 100;\n      font-style: normal;\n      font-display: swap;\n    }\n    \n    /* Main Page styling */\n    \n    *, *::before, *::after {\n       box-sizing: inherit;\n       outline:0;\n    }\n    \n    html {\n        box-sizing: border-box;\n        -webkit-text-size-adjust: 100%;\n        -webkit-font-smoothing: antialiased;\n        -moz-osx-font-smoothing: grayscale;\n    }\n    \n    body {\n        background-color: ${mn(e, "bgColor", B.mainBackgroundColor)};\n        color: ${mn(e, "fontColor", B.fontColor)};\n        minHeight: 100vh;\n        font-family: 'Geist', sans-serif;\n        margin: 0;\n        -webkit-font-smoothing: antialiased;\n        -moz-osx-font-smoothing: grayscale;\n        font-weight: 400;\n        font-size: 14px;\n        line-height: 1.5;\n        transition: background-color 0s\n    }\n    \n    fieldset, section {\n        border: 1px solid ${mn(e, "borderColor", B.borderColor)};\n        border-radius: 3px;\n        background-color: transparent;\n        padding: 25px;\n    }\n    \n    a {\n        color: ${mn(e, "linkColor", B.linkColor)};\n    }\n    \n    a:hover {\n        color: ${mn(e, "linkColor", B.linkColor)};\n    }\n    \n    hr {\n        border-top: 0;\n        border-left: 0;\n        border-right: 0;\n        border-bottom: 1px solid ${mn(e, "borderColor", B.borderColor)};\n        background-color: transparent;\n    }\n    \n    ul {\n        padding-left: 20px;\n        list-style: none;\n        \n        li:not([class*="Mui"])::before {\n          content: '￭';\n          color: ${mn(e, "bulletColor", I.bulletColor)};\n          font-size: 20px;\n          display: inline-block;\n          width: 1em;\n          margin-left: -1em;\n        }\n        \n        ul {\n          list-style: none;\n          li:not([class*="Mui"])::before {\n            content: "￮";\n            color: ${mn(e, "bulletColor", I.bulletColor)},\n            font-size: 20px;\n            display: inline-block;\n            width: 1em;\n            margin-left: -1em;\n          }\n        }\n      }\n      \n    button:active, button:focus, input: active, input:focus {\n        outline: 0;\n    }\n    \n    .min-icon {\n        width: 26px;\n    }\n    \n    #root: {\n        height: 100%;\n        width: 100%;\n        display: flex;\n        flex-flow: column;\n        align-items: stretch;\n      }\n    \n    #preload {\n      display: none;\n    }\n    \n    #loader-block {\n      display: flex;\n      flex-direction: column;\n      width: 100%;\n      height: 100vh;\n      justify-content: center;\n      align-items: center;\n    }\n    \n    .muted {\n        color: ${mn(e, "mutedText", B.mutedText)};\n        font-size: 14px;\n    }\n    \n    .error {\n        color: ${mn(e, "signalColors.danger", B.danger)};\n    }\n    \n    /* Text Vars */\n    .SM_Normal {\n        font-family: 'Geist', sans-serif;\n        font-size: 12px;\n        font-style: normal;\n        font-weight: 400;\n        line-height: 16px;\n        letter-spacing: 0.5px;\n    }\n    .SM_Strong {\n        font-family: 'Geist', sans-serif;\n        font-size: 12px;\n        font-style: normal;\n        font-weight: 600;\n        line-height: 16px;\n        letter-spacing: 0.5px;\n    }\n    .Base_Normal {\n        font-family: 'Geist', sans-serif;\n        font-size: 14px;\n        font-style: normal;\n        font-weight: 400;\n        line-height: 16px;\n        letter-spacing: 0.5px;\n    }\n    .Base_Strong {\n        font-family: 'Geist', sans-serif;\n        font-size: 14px;\n        font-style: normal;\n        font-weight: 600;\n        line-height: 20px; \n        letter-spacing: 0.16px;\n    }\n    .LG_Normal {\n        font-family: 'Geist', sans-serif;\n        font-size: 16px;\n        font-style: normal;\n        font-weight: 400;\n        line-height: 20px;\n        letter-spacing: 0.16px;\n    }\n    .LG_Strong {\n        font-family: 'Geist', sans-serif;\n        font-size: 16px;\n        font-style: normal;\n        font-weight: 600;\n        line-height: 24px;\n        letter-spacing: 0.16px;\n    }\n    .XL_Normal {\n        font-family: 'Geist', sans-serif;\n        font-size: 20px;\n        font-style: 400;\n        font-weight: 84;\n        line-height: 28px;\n    }\n    .XL_Strong {\n        font-family: 'Geist', sans-serif;\n        font-size: 20px;\n        font-style: normal;\n        font-weight: 600;\n        line-height: 28px;\n    }\n    `}
 `,
   Hn = f`0% {
                                       transform: translate(139.785027px, 140.086989px) rotate(45.236493deg);
@@ -6924,7 +6935,7 @@ function xo(e, t) {
   var n = {};
   for (var r in e)
     if ({}.hasOwnProperty.call(e, r)) {
-      if (t.indexOf(r) >= 0) continue;
+      if (t.includes(r)) continue;
       n[r] = e[r];
     }
   return n;
@@ -6938,8 +6949,7 @@ function To(e, t) {
     var a = Object.getOwnPropertySymbols(e);
     for (r = 0; r < a.length; r++)
       (n = a[r]),
-        t.indexOf(n) >= 0 ||
-          ({}.propertyIsEnumerable.call(e, n) && (o[n] = e[n]));
+        t.includes(n) || ({}.propertyIsEnumerable.call(e, n) && (o[n] = e[n]));
   }
   return o;
 }
@@ -15501,34 +15511,21 @@ const aC = p.div(({}) => ({
       }),
     ),
   dC = p.div(
-    ({
-      theme: e,
-      customPaperHeight: t,
-      disabled: n,
-      noBackground: r,
-      sx: o,
-      rowHeight: a,
-    }) => ({
+    ({ theme: e, customPaperHeight: t, disabled: n, sx: r, rowHeight: o }) => ({
       display: "flex",
       overflow: "auto",
       boxSizing: "border-box",
       flexDirection: "column",
       padding: "10px 20px",
-      boxShadow: mn(e, "box.shadow", "none"),
-      border: `${mn(e, "box.border", B.disabledGrey)} 1px solid`,
-      borderRadius: 16,
+      boxShadow: "none",
+      border: 0,
       minHeight: 200,
       overflowY: "scroll",
       position: "relative",
       height: t || "calc(100vh - 205px)",
       backgroundColor: n
         ? mn(e, "dataTable.disabledBG", "transparent")
-        : mn(e, "box.backgroundColor", B.white),
-      "&.noBackground": {
-        backgroundColor: "transparent",
-        border: 0,
-        boxShadow: "none",
-      },
+        : "transparent",
       "& .loadingBox": { padding: "100px 0" },
       "& .overlayColumnSelection": {
         position: "absolute",
@@ -15554,7 +15551,7 @@ const aC = p.div(({}) => ({
       "&::-webkit-scrollbar": { width: 0, height: 3 },
       "& .rowLine": {
         borderBottom: `${mn(e, "dataTable.border", b["Color/Neutral/Border/colorBorderBold"].lightMode)} 1px solid`,
-        height: a,
+        height: o,
         fontSize: 14,
         transitionDuration: "0.3s",
         "&:focus": { outline: "initial" },
@@ -15660,7 +15657,7 @@ const aC = p.div(({}) => ({
         width: 30,
         height: 30,
       },
-      ...V(o, e),
+      ...V(r, e),
     }),
   ),
   uC = {
@@ -15682,50 +15679,49 @@ const aC = p.div(({}) => ({
     idField: d,
     customEmptyMessage: u = "",
     customPaperHeight: p = "",
-    noBackground: m = !0,
-    columnsSelector: h = !1,
-    textSelectable: g = !1,
-    columnsShown: f = [],
-    onColumnChange: v = (e) => {},
-    infiniteScrollConfig: E,
-    autoScrollToBottom: w = !1,
-    disabled: L = !1,
-    onSelectAll: b,
-    rowStyle: M,
-    parentClassName: H = "",
-    sx: y,
-    rowHeight: R = 40,
-    sortEnabled: x = !1,
-    sortCallBack: T,
+    columnsSelector: m = !1,
+    textSelectable: h = !1,
+    columnsShown: g = [],
+    onColumnChange: f = (e) => {},
+    infiniteScrollConfig: v,
+    autoScrollToBottom: E = !1,
+    disabled: w = !1,
+    onSelectAll: L,
+    rowStyle: b,
+    parentClassName: M = "",
+    sx: H,
+    rowHeight: y = 40,
+    sortEnabled: R = !1,
+    sortCallBack: x,
   }) => {
-    const [N, S] = r(!1),
-      [V, _] = r(void 0),
-      [A, k] = r("ASC"),
-      [I, Z] = r(null),
-      B = d || "",
-      O = e ? e.find((e) => "view" === e.type) : null,
-      D = x && "object" == typeof x && !Array.isArray(x),
-      P = (e) => {
-        S(!N), Z(e.currentTarget);
+    const [T, N] = r(!1),
+      [S, V] = r(void 0),
+      [_, A] = r("ASC"),
+      [k, I] = r(null),
+      Z = d || "",
+      B = e ? e.find((e) => "view" === e.type) : null,
+      O = R && "object" == typeof R && !Array.isArray(R),
+      D = (e) => {
+        N(!T), I(e.currentTarget);
       },
-      F = () => {
-        S(!1), Z(null);
+      P = () => {
+        N(!1), I(null);
       };
-    let U, G, z;
-    const $ = (e) => {
+    let F, U, G;
+    const z = (e) => {
       const t = mn(e, "sortDirection", "DESC");
-      _(e.sortBy), k(t), T && T(e);
+      V(e.sortBy), A(t), x && x(e);
     };
-    x &&
-      (D
-        ? ((U = x.onSortClick), (G = x.currentSort), (z = x.currentDirection))
-        : ((U = $), (G = V), (z = A)));
-    let W = l;
+    R &&
+      (O
+        ? ((F = R.onSortClick), (U = R.currentSort), (G = R.currentDirection))
+        : ((F = z), (U = S), (G = _)));
+    let $ = l;
     return (
-      x &&
-        V &&
-        !D &&
-        (W = ((e, t, n) => {
+      R &&
+        S &&
+        !O &&
+        ($ = ((e, t, n) => {
           const r = e;
           if (0 === e.length) return e;
           if (Hi(e[0]) && void 0 !== t)
@@ -15745,18 +15741,13 @@ const aC = p.div(({}) => ({
                 r.sort((e, t) => (e < t ? 1 : e > t ? -1 : 0));
             }
           return r;
-        })(l, V, A)),
+        })(l, S, _)),
       t.createElement(
         fr,
-        { item: !0, xs: 12, className: `data-table ${H}` },
+        { item: !0, xs: 12, className: `data-table ${M}` },
         t.createElement(
           dC,
-          {
-            className: "" + (m ? "noBackground" : ""),
-            customPaperHeight: p,
-            sx: y,
-            rowHeight: R,
-          },
+          { customPaperHeight: p, sx: H, rowHeight: y },
           i &&
             t.createElement(
               fr,
@@ -15772,9 +15763,9 @@ const aC = p.div(({}) => ({
                 t.createElement(Zn, null),
               ),
             ),
-          h &&
+          m &&
             !i &&
-            W.length > 0 &&
+            $.length > 0 &&
             t.createElement(
               n,
               null,
@@ -15794,30 +15785,30 @@ const aC = p.div(({}) => ({
                       id: "columns-selector",
                       icon: t.createElement(cC, null),
                       iconLocation: "end",
-                      onClick: P,
+                      onClick: D,
                     },
                     "Columns",
                   ),
-                  N &&
+                  T &&
                     t.createElement(sC, {
-                      open: N,
-                      closeTriggerAction: F,
-                      onSelect: (e) => v(e),
+                      open: T,
+                      closeTriggerAction: P,
+                      onSelect: (e) => f(e),
                       columns: e,
-                      selectedOptionIDs: f,
-                      anchorEl: I,
+                      selectedOptionIDs: g,
+                      anchorEl: k,
                     }),
                 ))(o),
             ),
-          W && !i && W.length > 0
+          $ && !i && $.length > 0
             ? t.createElement(
                 nl,
                 {
-                  isRowLoaded: ({ index: e }) => !!W[e],
-                  loadMoreRows: E
-                    ? E.loadMoreRecords
+                  isRowLoaded: ({ index: e }) => !!$[e],
+                  loadMoreRows: v
+                    ? v.loadMoreRecords
                     : () => new Promise(() => !0),
-                  rowCount: E ? E.recordsCount : W.length,
+                  rowCount: v ? v.recordsCount : $.length,
                 },
                 ({ onRowsRendered: r, registerChild: l }) =>
                   t.createElement(Da, null, ({ width: i, height: C }) => {
@@ -15825,7 +15816,7 @@ const aC = p.div(({}) => ({
                         const n = 36 * t;
                         return n < 36 ? 36 : n > e ? e : n;
                       })(i, e ? e.filter((e) => "view" !== e.type).length : 0),
-                      m = !(!a || !c),
+                      f = !(!a || !c),
                       v = !!(
                         (e && e.length > 1) ||
                         (e && 1 === e.length && "view" !== e[0].type)
@@ -15845,69 +15836,69 @@ const aC = p.div(({}) => ({
                             "" !== u ? u : `There are no ${s || "items"} yet.`,
                           ),
                         overscanRowCount: 10,
-                        rowHeight: R,
+                        rowHeight: y,
                         width: i,
-                        rowCount: W.length,
-                        rowGetter: ({ index: e }) => W[e],
+                        rowCount: $.length,
+                        rowGetter: ({ index: e }) => $[e],
                         onRowClick: ({ rowData: e }) => {
                           ((e) => {
-                            if (O) {
-                              const t = O.sendOnlyId && d ? e[B] : e;
+                            if (B) {
+                              const t = B.sendOnlyId && d ? e[Z] : e;
                               let n = !1;
-                              O.isDisabled &&
+                              B.isDisabled &&
                                 (n =
-                                  "boolean" == typeof O.isDisabled
-                                    ? O.isDisabled
-                                    : O.isDisabled(e)),
-                                O.onClick && !n && O.onClick(t);
+                                  "boolean" == typeof B.isDisabled
+                                    ? B.isDisabled
+                                    : B.isDisabled(e)),
+                                B.onClick && !n && B.onClick(t);
                             }
                           })(e);
                         },
                         rowClassName: (e) =>
-                          `rowLine ${O ? "canClick" : ""} ${!O && g ? "canSelectText" : ""} ${M ? M(e) : ""}`,
+                          `rowLine ${B ? "canClick" : ""} ${!B && h ? "canSelectText" : ""} ${b ? b(e) : ""}`,
                         onRowsRendered: r,
-                        sort: U,
-                        sortBy: G,
-                        sortDirection: z,
-                        scrollToIndex: w ? W.length - 1 : -1,
+                        sort: F,
+                        sortBy: U,
+                        sortDirection: G,
+                        scrollToIndex: E ? $.length - 1 : -1,
                         rowStyle: (e) => {
-                          if (M) {
-                            const t = M(e);
+                          if (b) {
+                            const t = b(e);
                             return "string" == typeof t ? mn(uC, t, {}) : t;
                           }
                           return {};
                         },
                       },
-                      m &&
+                      f &&
                         t.createElement(Gl, {
                           headerRenderer: () =>
                             t.createElement(
                               n,
                               null,
-                              b
+                              L
                                 ? t.createElement(
                                     "div",
                                     { className: "checkAllWrapper" },
                                     t.createElement(oo, {
                                       label: "",
-                                      onChange: b,
+                                      onChange: L,
                                       value: "all",
                                       id: "selectAll",
                                       name: "selectAll",
                                       checked:
                                         (null == c ? void 0 : c.length) ===
-                                        W.length,
+                                        $.length,
                                     }),
                                   )
                                 : t.createElement(n, null, "Select"),
                             ),
-                          dataKey: `select-${B}`,
+                          dataKey: `select-${Z}`,
                           width: 45,
                           disableSort: !0,
                           cellRenderer: ({ rowData: e }) => {
-                            const n = !!c && c.includes(pi(e) ? e : `${e[B]}`);
+                            const n = !!c && c.includes(pi(e) ? e : `${e[Z]}`);
                             return t.createElement(oo, {
-                              value: pi(e) ? e : `${e[B]}`,
+                              value: pi(e) ? e : `${e[Z]}`,
                               color: "primary",
                               className: "TableCheckbox",
                               checked: n,
@@ -15918,7 +15909,7 @@ const aC = p.div(({}) => ({
                             });
                           },
                         }),
-                      Pi(o, i, p, m, v, c || [], B, h, f, x, G || "", z),
+                      Pi(o, i, p, f, v, c || [], Z, m, g, R, U || "", G),
                       v &&
                         t.createElement(Gl, {
                           dataKey: "column-options",
@@ -15926,7 +15917,7 @@ const aC = p.div(({}) => ({
                           headerClassName: "optionsAlignment",
                           className: "optionsAlignment",
                           cellRenderer: ({ rowData: n }) => {
-                            const r = !!c && c.includes(pi(n) ? n : `${n[B]}`);
+                            const r = !!c && c.includes(pi(n) ? n : `${n[Z]}`);
                             return ((e, n, r, o) =>
                               e.map((e, a) => {
                                 if ("view" === e.type) return null;
@@ -15961,7 +15952,7 @@ const aC = p.div(({}) => ({
                                         disabled: l,
                                       })
                                 );
-                              }))(e || [], n, r, B);
+                              }))(e || [], n, r, Z);
                           },
                         }),
                     );
@@ -16451,7 +16442,7 @@ const aC = p.div(({}) => ({
         (C || s) && (i = C && s ? 60 : 30),
         {
           lineHeight: "20px",
-          height: "small" === a ? 30 : 38,
+          height: "small" === a ? 28 : 38,
           boxSizing: "border-box",
           width: "100%",
           paddingTop: "small" === a ? 4 : 8,
@@ -16537,7 +16528,7 @@ const aC = p.div(({}) => ({
         borderBottomRightRadius: 4,
         borderLeft: `1px solid ${e.colors["Color/Neutral/Border/colorBorderSubtle"]}`,
         boxShadow: "none",
-        height: "small" === t ? 28 : 36,
+        height: "small" === t ? 26 : 36,
         "& .min-icon": {
           width: 16,
           height: 16,
@@ -45744,8 +45735,12 @@ const _B = TB(EB, "div"),
     "solidColor",
     "textArea",
     "textPath",
-  ]),
-  kB = /\r?\n|\r/g;
+  ]);
+function kB(e, t) {
+  const n = e.indexOf("\r", t),
+    r = e.indexOf("\n", t);
+  return -1 === r ? n : -1 === n || n + 1 === r ? r : n < r ? n : r;
+}
 const IB = {
     html: "http://www.w3.org/1999/xhtml",
     mathml: "http://www.w3.org/1998/Math/MathML",
@@ -45779,37 +45774,46 @@ function OB(e, t) {
           r = (function (e) {
             const t = String(e),
               n = [];
-            for (kB.lastIndex = 0; kB.test(t); ) n.push(kB.lastIndex);
-            return (
-              n.push(t.length + 1),
-              {
-                toPoint: function (e) {
-                  let t = -1;
-                  if ("number" == typeof e && e > -1 && e < n[n.length - 1])
-                    for (; ++t < n.length; )
-                      if (n[t] > e)
-                        return {
-                          line: t + 1,
-                          column: e - (t > 0 ? n[t - 1] : 0) + 1,
-                          offset: e,
-                        };
-                },
-                toOffset: function (e) {
-                  const t = e && e.line,
-                    r = e && e.column;
-                  if (
-                    "number" == typeof t &&
-                    "number" == typeof r &&
-                    !Number.isNaN(t) &&
-                    !Number.isNaN(r) &&
-                    t - 1 in n
-                  ) {
-                    const e = (n[t - 2] || 0) + r - 1 || 0;
-                    if (e > -1 && e < n[n.length - 1]) return e;
+            return {
+              toOffset: function (e) {
+                if (
+                  e &&
+                  "number" == typeof e.line &&
+                  "number" == typeof e.column &&
+                  !Number.isNaN(e.line) &&
+                  !Number.isNaN(e.column)
+                ) {
+                  for (; n.length < e.line; ) {
+                    const e = n[n.length - 1],
+                      r = kB(t, e),
+                      o = -1 === r ? t.length + 1 : r + 1;
+                    if (e === o) break;
+                    n.push(o);
                   }
-                },
-              }
-            );
+                  const r = (e.line > 1 ? n[e.line - 2] : 0) + e.column - 1;
+                  if (r < n[e.line - 1]) return r;
+                }
+              },
+              toPoint: function (e) {
+                if ("number" == typeof e && e > -1 && e <= t.length) {
+                  let r = 0;
+                  for (;;) {
+                    let o = n[r];
+                    if (void 0 === o) {
+                      const e = kB(t, n[r - 1]);
+                      (o = -1 === e ? t.length + 1 : e + 1), (n[r] = o);
+                    }
+                    if (o > e)
+                      return {
+                        line: r + 1,
+                        column: e - (r > 0 ? n[r - 1] : 0) + 1,
+                        offset: e,
+                      };
+                    r++;
+                  }
+                }
+              },
+            };
           })(t),
           o = r.toPoint(0),
           a = r.toPoint(t.length);
@@ -54215,13 +54219,7 @@ const nU = function (e) {
       r = function () {
         return n.apply(r, arguments);
       };
-    Object.setPrototypeOf(r, t);
-    const o = Object.getOwnPropertyNames(n);
-    for (const e of o) {
-      const t = Object.getOwnPropertyDescriptor(n, e);
-      t && Object.defineProperty(r, e, t);
-    }
-    return r;
+    return Object.setPrototypeOf(r, t), r;
   },
   rU = {}.hasOwnProperty;
 class oU extends nU {
@@ -82577,7 +82575,7 @@ const P6 = p.div(({ theme: e }) => ({
     borderRadius: 4,
     overflow: "hidden",
     width: "initial",
-    height: 30,
+    height: 28,
     boxSizing: "border-box",
     "& > *:not(:last-child)": {
       borderRight: `1px solid   ${mn(e, "buttonGroup.border", b["Color/Neutral/Border/colorBorderMinimal"].lightMode)}`,
@@ -82601,7 +82599,7 @@ const P6 = p.div(({ theme: e }) => ({
         "buttonGroup.labelColor",
         b["Color/Neutral/Text/colorTextSecondary"].lightMode,
       ),
-      height: 28,
+      height: 26,
       background: "transparent",
       "& .buttonIcon": {
         height: 16,
@@ -82712,6 +82710,44 @@ const P6 = p.div(({ theme: e }) => ({
             "buttonGroup.activeLabelColor",
             b["Color/Neutral/Text/colorTextSecondary"].lightMode,
           ),
+        },
+      },
+      "&.selected:not(:disabled)": {
+        backgroundColor: mn(
+          e,
+          "buttonGroup.selectedBackground",
+          b["Color/Brand/Control/colorBgActive"].lightMode,
+        ),
+        color: mn(
+          e,
+          "buttonGroup.selectedLabelColor",
+          b["Color/Brand/Info/colorPrimaryActive"].lightMode,
+        ),
+        "& .buttonIcon > svg": {
+          color: mn(
+            e,
+            "buttonGroup.selectedLabelColor",
+            b["Color/Brand/Info/colorPrimaryActive"].lightMode,
+          ),
+        },
+        "&:hover": {
+          backgroundColor: mn(
+            e,
+            "buttonGroup.selectedBackground",
+            b["Color/Brand/Control/colorBgActive"].lightMode,
+          ),
+          color: mn(
+            e,
+            "buttonGroup.selectedLabelColor",
+            b["Color/Brand/Info/colorPrimaryActive"].lightMode,
+          ),
+          "& .buttonIcon > svg": {
+            color: mn(
+              e,
+              "buttonGroup.selectedLabelColor",
+              b["Color/Brand/Info/colorPrimaryActive"].lightMode,
+            ),
+          },
         },
       },
     },
