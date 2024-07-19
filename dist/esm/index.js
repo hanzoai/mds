@@ -5343,7 +5343,7 @@ const Tr = ({
     override: n = {},
     glContext: r,
     failIfMajorPerformanceCaveat: o = !1,
-    benchmarksURL: a = "https://unpkg.com/detect-gpu@5.0.38/dist/benchmarks",
+    benchmarksURL: a = "https://unpkg.com/detect-gpu@5.0.39/dist/benchmarks",
   } = {}) =>
     vr(void 0, void 0, void 0, function* () {
       const l = {};
@@ -5471,7 +5471,9 @@ const Tr = ({
                           ["a12x", o, 15],
                           ["a12z", o, 15],
                           ["a14", o, 15],
+                          ["a15", o, 15],
                           ["m1", o, 15],
+                          ["m2", o, 15],
                         ]
                       : [
                           ["a7", l, 12],
@@ -74825,11 +74827,13 @@ const Kq = p.div(({ theme: e, editorHeight: t, sx: n }) => ({
   })),
   vY = p.div(({ theme: e, expanded: t }) => ({
     borderTop: t ? `1px solid ${mn(e, "borderColor", I.borderColor)}` : "0",
-    overflow: "hidden",
+    display: "grid",
+    gridTemplateRows: t ? "1fr" : "0fr",
+    transition: "250ms grid-template-rows ease",
     "& .expandSubContainer": {
-      padding: 10,
-      marginTop: t ? 0 : "-100%",
-      transition: "all 0.2s",
+      overflow: "hidden",
+      padding: t ? 10 : 0,
+      transition: t ? "initial" : "250ms padding ease 150ms",
     },
   })),
   EY = ({
