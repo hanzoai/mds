@@ -3084,7 +3084,7 @@ const hn = require("../assets/fonts/Geist/Geist-Black.woff2"),
       return (
         s && (p = (a && "" !== a) || i ? "4px 12px" : "6px"),
         {
-          borderRadius: 6,
+          borderRadius: 4,
           cursor: "pointer",
           height: C ? 28 : 36,
           fontFamily: "'Geist', sans-serif",
@@ -3105,14 +3105,18 @@ const hn = require("../assets/fonts/Geist/Geist-Black.woff2"),
           boxShadow: mn(e, `buttons.${n}.enabled.shadow`, "none"),
           "& .button-label": { whiteSpace: t ? "normal" : "nowrap", ...d },
           "& .buttonIcon": {
-            display: "block",
+            display: "flex",
             height: 16,
             width: 16,
+            minWidth: 16,
+            minHeight: 16,
+            justifyContent: "center",
+            alignItems: "center",
             "& > svg": {
               fill: mn(e, `buttons.${n}.enabled.text`, "#000"),
               color: mn(e, `buttons.${n}.enabled.text`, "#000"),
-              width: 14,
-              height: 14,
+              width: 16,
+              height: 16,
             },
           },
           "&:disabled": {
@@ -5343,7 +5347,7 @@ const Tr = ({
     override: n = {},
     glContext: r,
     failIfMajorPerformanceCaveat: o = !1,
-    benchmarksURL: a = "https://unpkg.com/detect-gpu@5.0.39/dist/benchmarks",
+    benchmarksURL: a = "https://unpkg.com/detect-gpu@5.0.40/dist/benchmarks",
   } = {}) =>
     vr(void 0, void 0, void 0, function* () {
       const l = {};
@@ -16531,6 +16535,7 @@ const aC = p.div(({}) => ({
         borderLeft: `1px solid ${e.colors["Color/Neutral/Border/colorBorderSubtle"]}`,
         boxShadow: "none",
         height: "small" === t ? 26 : 36,
+        boxSizing: "border-box",
         "& .min-icon": {
           width: 16,
           height: 16,
@@ -82670,6 +82675,7 @@ const P6 = p.div(({ theme: e }) => ({
           "buttonGroup.border",
           b["Color/Neutral/Border/colorBorderMinimal"].lightMode,
         ),
+        boxShadow: "none",
         "& .buttonIcon > svg": {
           color: mn(
             e,
@@ -82708,6 +82714,7 @@ const P6 = p.div(({ theme: e }) => ({
           "buttonGroup.border",
           b["Color/Neutral/Border/colorBorderMinimal"].lightMode,
         ),
+        boxShadow: "none",
         "& .buttonIcon > svg": {
           color: mn(
             e,
