@@ -87666,13 +87666,12 @@ const d0 = p.div(({ theme: e, sx: t, marginTop: n, separator: r }) => ({
   h0 = p.div(({ theme: e }) => ({
     position: "relative",
     boxSizing: "border-box",
-    height: 30,
+    height: 28,
     "& svg ": {
       position: "absolute",
       marginLeft: 8,
       top: "50%",
       transform: "translateY(-50%)",
-      zIndex: 200,
       width: 16,
       height: 16,
       color: mn(
@@ -87694,10 +87693,9 @@ const d0 = p.div(({ theme: e, sx: t, marginTop: n, separator: r }) => ({
         b["Color/Brand/Primary/colorPrimaryBorder"].lightMode,
       );
     return {
-      zIndex: 100,
       position: "relative",
       width: "100%",
-      height: 30,
+      height: 28,
       boxSizing: "border-box",
       borderRadius: 4,
       paddingTop: 0,
