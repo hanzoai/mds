@@ -15309,6 +15309,17 @@ const yi = [
                 "& svg": { width: 12, height: 12, minWidth: 12, minHeight: 12 },
               },
             },
+            t.createElement(
+              Sr,
+              {
+                sx: {
+                  whiteSpace: "nowrap",
+                  overflow: "hidden",
+                  textOverflow: "ellipsis",
+                },
+              },
+              r.label,
+            ),
             d || (Array.isArray(d) && d.includes(r.elementKey))
               ? t.createElement(
                   n,
@@ -15324,17 +15335,6 @@ const yi = [
                     : null,
                 )
               : null,
-            t.createElement(
-              Sr,
-              {
-                sx: {
-                  whiteSpace: "nowrap",
-                  overflow: "hidden",
-                  textOverflow: "ellipsis",
-                },
-              },
-              r.label,
-            ),
           ),
         className: r.contentTextAlign ? `text-${r.contentTextAlign}` : "",
         cellRenderer: ({ rowData: e }) => {
@@ -15657,9 +15657,11 @@ const aC = p.div(({}) => ({
       },
       "& .headerItem": {
         userSelect: "none",
-        fontWeight: 700,
-        fontSize: 14,
-        fontStyle: "initial",
+        fontSize: 12,
+        fontStyle: "normal",
+        fontWeight: 600,
+        lineHeight: "16px",
+        letterSpacing: "0.5px",
         display: "flex",
         alignItems: "center",
         outline: "none",
@@ -15674,9 +15676,12 @@ const aC = p.div(({}) => ({
         display: "flex",
         flexDirection: "row",
         alignItems: "center",
-        fontWeight: 700,
-        fontSize: 14,
-        borderColor: mn(e, "dataTable.border", "#39393980"),
+        fontSize: 12,
+        fontStyle: "normal",
+        fontWeight: 600,
+        lineHeight: "16px",
+        letterSpacing: "0.5px",
+        borderColor: "transparent",
         textTransform: "initial",
         transitionDuration: "0s",
       },
@@ -15691,12 +15696,7 @@ const aC = p.div(({}) => ({
         marginRight: 10,
         minWidth: 0,
         "&:first-of-type": { marginLeft: 10 },
-        "& svg": {
-          width: 12,
-          height: 12,
-          marginRight: 5,
-          alignSelf: "flex-end",
-        },
+        "& svg": { width: 12, height: 12, marginRight: 5, alignSelf: "center" },
       },
       "& .ReactVirtualized__Table__rowColumn": {
         marginRight: 10,
@@ -15764,7 +15764,7 @@ const aC = p.div(({}) => ({
     rowStyle: b,
     parentClassName: M = "",
     sx: H,
-    rowHeight: y = 40,
+    rowHeight: y = 36,
     sortEnabled: R = !1,
     sortCallBack: x,
   }) => {
@@ -15901,7 +15901,7 @@ const aC = p.div(({}) => ({
                         ref: l,
                         disableHeader: !1,
                         headerClassName: "headerItem",
-                        headerHeight: 40,
+                        headerHeight: 36,
                         height: C,
                         noRowsRenderer: () =>
                           t.createElement(
@@ -16594,12 +16594,13 @@ const aC = p.div(({}) => ({
       position: "absolute",
       right: 1,
       top: 1,
+      boxSizing: "border-box",
       "& button": {
         padding: 6,
         border: 0,
         borderRadius: 0,
-        borderTopRightRadius: 4,
-        borderBottomRightRadius: 4,
+        borderTopRightRadius: 3,
+        borderBottomRightRadius: 3,
         borderLeft: `1px solid ${e.colors["Color/Neutral/Border/colorBorderSubtle"]}`,
         boxShadow: "none",
         height: "small" === t ? 26 : 36,
@@ -16648,23 +16649,23 @@ const aC = p.div(({}) => ({
     onFocus: b,
     disableErrorUntilFocus: M = !1,
     children: H,
-    value: y,
-    ...R
+    value: R,
+    ...x
   }) => {
-    const [x, T] = r(!1);
-    let N = l,
-      S = a;
+    const [T, N] = r(!1);
+    let S = l,
+      V = a;
     "password" !== a ||
       l ||
-      ((N = x ? t.createElement(VC, null) : t.createElement(Si, null)),
-      (S = x ? "text" : "password"));
-    const [V, _] = r(!1);
+      ((S = T ? t.createElement(VC, null) : t.createElement(Si, null)),
+      (V = T ? "text" : "password"));
+    const [_, A] = r(!1);
     return (
-      M || "error" !== h || V || !g || ((g = ""), (h = "normal")),
+      M || "error" !== h || _ || !g || ((g = ""), (h = "normal")),
       t.createElement(
         ZC,
         {
-          sx: {
+          sx: (e) => ({
             "& .accessoryIcon": {
               position: "absolute",
               right: l || "password" === a ? 37 : 8,
@@ -16674,8 +16675,17 @@ const aC = p.div(({}) => ({
               height: 16,
             },
             flexDirection: "vertical" === L ? "column" : "row",
+            "& .inputLabel.verticalMode": {
+              fontSize: 14,
+              fontStyle: "normal",
+              fontWeight: 400,
+              lineHeight: "20px",
+              letterSpacing: "0.16px",
+              color: e.colors["Color/Neutral/Text/colorTextLabel"],
+              marginBottom: y.sizeXXS,
+            },
             ...f,
-          },
+          }),
           className: `inputItem inputBox Base_Normal ${m}`,
           sizeMode: w,
         },
@@ -16685,7 +16695,8 @@ const aC = p.div(({}) => ({
             {
               htmlFor: e,
               noMinWidth: i,
-              className: "inputLabel",
+              className:
+                "inputLabel " + ("vertical" === L ? "verticalMode" : ""),
               helpTip: v,
               helpTipPlacement: E,
               orientation: L,
@@ -16717,11 +16728,11 @@ const aC = p.div(({}) => ({
             t.createElement(IC, {
               id: e,
               fullWidth: !0,
-              type: S,
+              type: V,
               helper: g,
               state: h,
-              className: `Base_Normal inputRebase ${h}State ${y && "" !== y ? "filled" : ""}`,
-              value: y,
+              className: `Base_Normal inputRebase ${h}State ${R && "" !== R ? "filled" : ""}`,
+              value: R,
               "data-index": o,
               startIcon: p,
               overlayObject: c,
@@ -16729,9 +16740,9 @@ const aC = p.div(({}) => ({
               originType: a,
               sizeMode: w,
               onFocus: (e) => {
-                _(!0), b && b(e);
+                A(!0), b && b(e);
               },
-              ...R,
+              ...x,
             }),
             "error" === h &&
               t.createElement(_C, { className: "accessoryIcon errorState" }),
@@ -16739,7 +16750,7 @@ const aC = p.div(({}) => ({
               t.createElement(AC, { className: "accessoryIcon warningState" }),
             "success" === h &&
               t.createElement(kC, { className: "accessoryIcon successState" }),
-            N &&
+            S &&
               t.createElement(
                 Sr,
                 { className: "overlayAction" },
@@ -16748,10 +16759,10 @@ const aC = p.div(({}) => ({
                     ? () => {
                         s();
                       }
-                    : () => T(!x),
+                    : () => N(!T),
                   id: `${e}-button`,
                   type: "button",
-                  icon: N,
+                  icon: S,
                 }),
               ),
             c && t.createElement(Sr, { className: "overlayAction" }, c),
@@ -74947,7 +74958,7 @@ const Xq = p.div(({ theme: e, editorHeight: t, sx: n }) => ({
     return "portal" === u ? w(h, document.body) : h;
   },
   fY = p.div(({ theme: e, sx: t }) => ({
-    border: `1px solid ${mn(e, "borderColor", I.borderColor)}`,
+    borderBottom: `1px solid ${mn(e, "borderColor", I.borderColor)}`,
     borderRadius: 2,
     ...V(t, e),
   })),
@@ -74955,28 +74966,41 @@ const Xq = p.div(({ theme: e, editorHeight: t, sx: n }) => ({
     display: "flex",
     alignItems: "center",
     justifyContent: "space-between",
-    padding: 10,
-    fontWeight: "bold",
+    padding: `${y.sizeXXS}px 0`,
     cursor: "pointer",
     userSelect: "none",
+    fontSize: 14,
+    fontStyle: "normal",
+    fontWeight: 600,
+    lineHeight: "20px",
+    letterSpacing: "0.16px",
+    color: e.colors["Color/Neutral/Text/colorTextHeading"],
     "&.disabled": {
       cursor: "not-allowed",
-      color: mn(e, "mutedText", I.mutedText),
-      backgroundColor: mn(e, "signalColors.disabled", I.disabledGrey),
+      color: e.colors["Color/Neutral/Text/colorTextDisabled"],
     },
     "&:not(.disabled):hover": {
       backgroundColor: mn(e, "boxBackground", I.boxBackground),
     },
   })),
-  EY = p.div(({ theme: e, expanded: t }) => ({
-    borderTop: t ? `1px solid ${mn(e, "borderColor", I.borderColor)}` : "0",
+  EY = p.div(({ theme: e, expanded: t, backgroundColor: n }) => ({
+    borderTop: 0,
     display: "grid",
     gridTemplateRows: t ? "1fr" : "0fr",
     transition: "250ms grid-template-rows ease",
     "& .expandSubContainer": {
       overflow: "hidden",
-      padding: t ? 10 : 0,
+      padding: t ? y.sizeXS : 0,
       transition: t ? "initial" : "250ms padding ease 150ms",
+      display: "flex",
+      flexDirection: "column",
+      gap: 16,
+      backgroundColor: n
+        ? e.colors["Color/Neutral/Bg/colorBgSections"]
+        : "initial",
+      color: e.colors["Color/Neutral/Text/colorTextLabel"],
+      marginBottom: t ? y.sizeXS : 0,
+      "& > div:last-of-type": { marginBottom: 36 },
     },
   })),
   wY = ({
@@ -74986,11 +75010,12 @@ const Xq = p.div(({ theme: e, editorHeight: t, sx: n }) => ({
     onTitleClick: o,
     disabled: a,
     id: l,
-    sx: i,
+    contentBackgroundColor: i = !1,
+    sx: C,
   }) =>
     t.createElement(
       fY,
-      { id: l, sx: i },
+      { id: l, sx: C },
       t.createElement(
         vY,
         {
@@ -75002,7 +75027,7 @@ const Xq = p.div(({ theme: e, editorHeight: t, sx: n }) => ({
       ),
       t.createElement(
         EY,
-        { className: "accordionContent", expanded: n },
+        { className: "accordionContent", expanded: n, backgroundColor: i },
         t.createElement(Sr, { className: "expandSubContainer" }, r),
       ),
     ),
