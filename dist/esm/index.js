@@ -126,6 +126,10 @@ const b = {
       lightMode: "#ffffff",
       darkMode: "##2D2D2F",
     },
+    "Color/Neutral/Bg/colorBgFields": {
+      lightMode: "#FCFCFF",
+      darkMode: "#434347",
+    },
     "Color/Neutral/Bg/colorBgOverlay": {
       lightMode: "#202022a6",
       darkMode: "#202022a6",
@@ -462,6 +466,7 @@ const b = {
     "Color/Base/Rose/8": { lightMode: "#a70d55", darkMode: "#fecceb" },
     "Color/Base/Rose/9": { lightMode: "#8b1048", darkMode: "#fee5f4" },
     "Color/Base/Rose/10": { lightMode: "#550228", darkMode: "#fef1f8" },
+    "Color/Base/Gray/1": { lightMode: "#FCFCFF", darkMode: "#09090B" },
     "Color/Dataviz/1": { lightMode: "#2B64E5", darkMode: "#4182F0" },
     "Color/Dataviz/2": { lightMode: "#F93BA4", darkMode: "#F93BA4" },
     "Color/Dataviz/3": { lightMode: "#135B53", darkMode: "#9CF3DD" },
@@ -496,7 +501,7 @@ const b = {
     "boxShadow-02":
       "0px 1px 2px 0px rgba(0, 0, 0, 0.08), 0px 1px 6px -1px rgba(0, 0, 0, 0.07), 0px 2px 4px 0px rgba(0, 0, 0, 0.07)",
     "boxShadow-03":
-      "0 1px 2px 0 rgba(0, 0, 0, 0.8), 0 4px 12px 0 rgba(0, 0, 0, 0.15), 0 2px 4px 0 rgba(0, 0, 0, 0.7)",
+      "0px 1px 2px 0px rgba(0, 0, 0, 0.08), 0px 4px 12px -1px rgba(0, 0, 0, 0.15), 0px 2px 4px 0px rgba(0, 0, 0, 0.07);",
     "boxShadow-04":
       "0px 4px 8px 0px rgba(0, 0, 0, 0.10), 0px 6px 12px 0px rgba(0, 0, 0, 0.10), 0px 6px 16px 0px rgba(0, 0, 0, 0.10)",
     "focusStyle-Light": "0px 0px 0px 2px rgba(43, 100, 229, 0.30)",
@@ -1263,14 +1268,17 @@ const I = {
       disabledOnBackground: B.disabledBlueText,
     },
     dropdownSelector: {
-      hoverText: B.fontColor,
-      backgroundColor: B.white,
-      hoverBG: B.menuSelectionColor,
-      selectedBGColor: B.menuSelectionColor,
-      selectedTextColor: B.fontColor,
-      optionTextColor: B.fontColor,
-      disabledText: B.disabledGreyText,
-      border: B.disabledGrey,
+      hoverText: b["Color/Neutral/Text/colorTextHeading"].lightMode,
+      backgroundColor: b["Color/Neutral/Bg/colorBgContainer"].lightMode,
+      hoverBG: b["Color/Brand/Control/colorBgHover"].lightMode,
+      selectedBGColor: b["Color/Brand/Control/colorBgActive"].lightMode,
+      selectedTextColor: b["Color/Brand/Primary/colorPrimaryText"].lightMode,
+      optionTextColor: b["Color/Neutral/Text/colorTextHeading"].lightMode,
+      disabledText: b["Color/Neutral/Text/colorTextDisabled"].lightMode,
+      border: b["Color/Neutral/Border/colorBorderMinimal"].lightMode,
+      dangerText: b["Color/Brand/Error/colorPrimaryText"].lightMode,
+      dangerHoverBG: b["Color/Brand/Error/colorPrimaryBgHover"].lightMode,
+      dangerHoverText: b["Color/Brand/Error/colorPrimaryTextHover"].lightMode,
     },
     readBox: {
       borderColor: B.borderColor,
@@ -2033,13 +2041,17 @@ const I = {
       disabledOnBackground: Z.disabledOnSwitchBG,
     },
     dropdownSelector: {
-      hoverText: Z.dark,
-      backgroundColor: Z.sectionOneBG,
-      hoverBG: Z.mainGrey,
-      selectedBGColor: Z.bulletColor,
-      selectedTextColor: Z.mainWhite,
-      optionTextColor: Z.defaultFontColor,
-      disabledText: Z.disabledGrey,
+      hoverText: b["Color/Neutral/Text/colorTextHeading"].darkMode,
+      backgroundColor: "transparent",
+      hoverBG: b["Color/Brand/Control/colorBgHover"].darkMode,
+      selectedBGColor: b["Color/Brand/Control/colorBgActive"].darkMode,
+      selectedTextColor: b["Color/Brand/Primary/colorPrimaryText"].darkMode,
+      optionTextColor: b["Color/Neutral/Text/colorTextHeading"].darkMode,
+      disabledText: b["Color/Neutral/Text/colorTextDisabled"].darkMode,
+      border: b["Color/Neutral/Border/colorBorderMinimal"].darkMode,
+      dangerText: b["Color/Brand/Error/colorPrimaryText"].darkMode,
+      dangerHoverBG: b["Color/Brand/Error/colorPrimaryBgHover"].darkMode,
+      dangerHoverText: b["Color/Brand/Error/colorPrimaryTextHover"].darkMode,
     },
     readBox: {
       borderColor: Z.headerBorder,
@@ -5924,11 +5936,7 @@ const Tr = ({
     flexDirection: "row",
     width: "100%",
     left: 0,
-    flexWrap: "wrap",
     justifyContent: "space-between",
-    [`@media (max-width: ${mn(H, "md", 0)}px)`]: {
-      "& > div": { margin: "4px 0", padding: "0 20px," },
-    },
     paddingLeft: 32,
     paddingRight: 32,
     borderBottom: 0,
@@ -5974,31 +5982,19 @@ const Tr = ({
       Ir,
       { ...a, sx: o, className: "page-header" },
       t.createElement(
-        fr,
-        {
-          className: "page-header-label",
-          item: !0,
-          xs: 12,
-          sm: 12,
-          md: n ? 4 : 6,
-        },
+        Sr,
+        { className: "page-header-label" },
         t.createElement(Zr, null, e),
       ),
       n &&
         t.createElement(
-          fr,
-          { className: "page-header-middle", item: !0, xs: 12, sm: 12, md: 4 },
+          Sr,
+          { className: "page-header-middle" },
           t.createElement(Br, null, n),
         ),
       t.createElement(
-        fr,
-        {
-          className: "page-header-actions",
-          item: !0,
-          xs: 12,
-          sm: 12,
-          md: n ? 4 : 6,
-        },
+        Sr,
+        { className: "page-header-actions" },
         t.createElement(Or, null, r),
       ),
     ),
@@ -15590,7 +15586,6 @@ const aC = p.div(({}) => ({
       overflow: "auto",
       boxSizing: "border-box",
       flexDirection: "column",
-      padding: "10px 20px",
       boxShadow: "none",
       border: 0,
       minHeight: 200,
@@ -16523,7 +16518,7 @@ const aC = p.div(({}) => ({
           paddingBottom: "small" === a ? 4 : 8,
           paddingRight: i,
           paddingLeft: t ? 35 : 8,
-          color: e.colors["Color/Neutral/Text/colorTextHeading"] + "!important",
+          color: e.colors["Color/Neutral/Text/colorTextHeading"],
           fontSize: 14,
           fontWeight: 400,
           borderWidth: "1px",
@@ -16532,13 +16527,13 @@ const aC = p.div(({}) => ({
           borderColor: e.colors["Color/Neutral/Border/colorBorderSubtle"],
           outline: "none",
           transitionDuration: "0.1s",
-          backgroundColor: mn(e, "inputBox.backgroundColor", "#fff"),
+          backgroundColor: e.colors["Color/Neutral/Bg/colorBgFields"],
           letterSpacing: "0.16px",
           "&.filled": {
-            borderColor: e.colors["Color/Neutral/Border/colorBorderBold"],
+            borderColor: e.colors["Color/Neutral/Border/colorBorderSubtle"],
           },
-          "&:placeholder": {
-            color: mn(e, "inputBox.placeholderColor", "#858585"),
+          "&::placeholder": {
+            color: e.colors["Color/Neutral/Text/colorTextPlaceholder"],
             opacity: 1,
             fontWeight: 400,
             letterSpacing: "0.16px",
@@ -16550,12 +16545,27 @@ const aC = p.div(({}) => ({
             borderColor: e.colors["Color/Brand/Primary/colorPrimaryBorder"],
             boxShadow: "0px 0px 0px 2px rgba(43, 100, 229, 0.30)",
           },
-          "&:disabled, &:read-only": {
+          "&:read-only": {
             color: e.colors["Color/Neutral/Text/colorTextHeading"],
+            borderColor: e.colors["Color/Neutral/Border/colorBorderSubtle"],
+            backgroundColor: e.colors["Color/Neutral/Bg/colorBgShell"],
+            "&:placeholder": {
+              color: mn(e, "inputBox.disabledPlaceholder", "#E6EBEB"),
+            },
+          },
+          "&::-webkit-outer-spin-button, &::-webkit-inner-spin-button": {
+            WebkitAppearance: "none",
+            margin: 0,
+          },
+          "&[type=number]": { "-moz-appearance": "textfield" },
+          "&:disabled": {
+            cursor: "not-allowed",
+            userSelect: "none",
+            color: e.colors["Color/Neutral/Text/colorTextPlaceholder"],
             borderColor: e.colors["Color/Neutral/Border/colorBorderSubtle"],
             backgroundColor: e.colors["Color/Neutral/Bg/colorBgDisabled"],
             "&:placeholder": {
-              color: mn(e, "inputBox.disabledPlaceholder", "#E6EBEB"),
+              color: e.colors["Color/Neutral/Text/colorTextPlaceholder"],
             },
           },
         }
@@ -16605,6 +16615,7 @@ const aC = p.div(({}) => ({
         boxShadow: "none",
         height: "small" === t ? 26 : 36,
         boxSizing: "border-box",
+        fontWeight: "400",
         "& .min-icon": {
           width: 16,
           height: 16,
@@ -16866,21 +16877,21 @@ const aC = p.div(({}) => ({
       }
     );
   },
-  PC = p.div(({ theme: e, sx: t }) => ({
+  PC = p.div(({ theme: e, sx: t, forInputOptions: n }) => ({
     position: "absolute",
     display: "grid",
     gridTemplateColumns: "100%",
     backgroundColor: mn(e, "dropdownSelector.backgroundColor", B.white),
     padding: 8,
     maxHeight: 450,
-    minWidth: 180,
+    minWidth: n ? "initial" : 180,
     overflowX: "hidden",
     overflowY: "auto",
-    borderRadius: 12,
+    borderRadius: R.borderRadiusSM,
     border: `1px solid ${mn(e, "dropdownSelector.border", B.disabledGrey)}`,
     boxShadow:
       "0px 2px 8px 0px rgba(156, 163, 175, 0.15), 0px 4px 12px 0px rgba(156, 163, 175, 0.25)",
-    marginTop: 10,
+    marginTop: n ? 0 : 10,
     "& ul": {
       padding: 0,
       margin: 0,
@@ -16921,17 +16932,18 @@ const aC = p.div(({}) => ({
     open: n,
     anchorEl: a = null,
     anchorOrigin: l = "start",
-    children: i,
+    forInputOptions: i = !1,
+    children: C,
   }) => {
-    const [C, s] = r(null);
+    const [s, c] = r(null);
     return (
       OC(e),
       o(() => {
-        s(n ? FC(a, l) : null);
+        c(n ? FC(a, l) : null);
       }, [n]),
       o(() => {
         const t = oC((e) => {
-          e && e.getBoundingClientRect() && s(FC(e, l));
+          e && e.getBoundingClientRect() && c(FC(e, l));
         }, 300);
         window.addEventListener("resize", () => {
           e();
@@ -16940,7 +16952,7 @@ const aC = p.div(({}) => ({
             t(a);
           });
       }),
-      n && C
+      n && s
         ? (a ||
             console.warn(
               "AnchorEl not set. Element will be rendered on the top of the page",
@@ -16949,7 +16961,7 @@ const aC = p.div(({}) => ({
             t.createElement(
               lC,
               { onClick: e },
-              t.createElement(PC, { sx: C }, i),
+              t.createElement(PC, { sx: s, forInputOptions: i }, C),
             ),
             document.body,
           ))
@@ -16969,14 +16981,15 @@ const aC = p.div(({}) => ({
     disabled: u,
     dropArrow: p = !0,
     compact: m = !1,
-    inButtonGroup: g,
+    forInputOptions: g = !1,
+    inButtonGroup: h,
   }) => {
-    const [h, f] = r(!1),
-      [v, E] = t.useState(null);
-    let w = null;
+    const [f, v] = r(!1),
+      [E, w] = t.useState(null);
+    let L = null;
     return (
       p &&
-        (w = h
+        (L = f
           ? t.createElement(Oi, { style: { fill: "none" } })
           : t.createElement(Di, { style: { fill: "none" } })),
       t.createElement(
@@ -16986,7 +16999,7 @@ const aC = p.div(({}) => ({
           id: e,
           icon: o,
           iconLocation: a,
-          secondaryIcon: w,
+          secondaryIcon: L,
           variant: i,
           name: C,
           sx: s,
@@ -16994,20 +17007,21 @@ const aC = p.div(({}) => ({
           disabled: u,
           compact: m,
           onClick: (e) => {
-            f(!h), E(e.currentTarget);
+            v(!f), w(e.currentTarget);
           },
-          inButtonGroup: g,
+          inButtonGroup: h,
         }),
-        h &&
+        f &&
           t.createElement(
             UC,
             {
-              open: h,
+              open: f,
               hideTriggerAction: () => {
-                f(!1);
+                v(!1);
               },
               anchorOrigin: l,
-              anchorEl: v,
+              anchorEl: E,
+              forInputOptions: g,
             },
             d,
           ),
@@ -17866,12 +17880,11 @@ const aC = p.div(({}) => ({
     minWidth: n ? 160 : 0,
     overflowX: "hidden",
     overflowY: "auto",
-    borderRadius: r ? 16 : 12,
+    borderRadius: R.borderRadiusSM,
     border: r
       ? 0
       : `1px solid ${mn(e, "dropdownSelector.border", B.disabledGrey)}`,
-    boxShadow:
-      "0px 2px 8px 0px rgba(156, 163, 175, 0.15), 0px 4px 12px 0px rgba(156, 163, 175, 0.25)",
+    boxShadow: M["boxShadow-03"],
     "& ul": {
       padding: 0,
       margin: 0,
@@ -17894,7 +17907,7 @@ const aC = p.div(({}) => ({
         color: mn(e, "dropdownSelector.optionTextColor", "#000"),
         padding: "6px 10px",
         fontSize: 14,
-        fontWeight: 600,
+        fontWeight: 400,
         lineHeight: "18px",
         letterSpacing: "0.16px",
         userSelect: "none",
@@ -17902,7 +17915,7 @@ const aC = p.div(({}) => ({
         justifyContent: "flex-start",
         gap: 10,
         whiteSpace: "nowrap",
-        borderRadius: 6,
+        borderRadius: R.borderRadiusSM,
         display: "grid",
         gridTemplateColumns: o,
         "& svg": { width: 16, height: 16, minWidth: 16, minHeight: 16 },
@@ -17921,6 +17934,25 @@ const aC = p.div(({}) => ({
           "&:hover": {
             backgroundColor: mn(e, "dropdownSelector.backgroundColor", "#fff"),
             color: mn(e, "dropdownSelector.disabledText", "#E6EBEB"),
+          },
+        },
+        "&.danger:not(.disabled)": {
+          color: mn(
+            e,
+            "dropdownSelector.dangerText",
+            b["Color/Brand/Error/colorPrimaryText"].lightMode,
+          ),
+          "&:hover": {
+            backgroundColor: mn(
+              e,
+              "dropdownSelector.dangerHoverBG",
+              b["Color/Brand/Error/colorPrimaryBgHover"].lightMode,
+            ),
+            color: mn(
+              e,
+              "dropdownSelector.dangerHoverText",
+              b["Color/Brand/Error/colorPrimaryTextHover"].lightMode,
+            ),
           },
         },
         "&.hovered:not(.disabled)": {
@@ -18044,7 +18076,7 @@ const aC = p.div(({}) => ({
                   t.createElement(
                     ps,
                     {
-                      className: `${a === e.value ? "selected" : ""} ${e.disabled ? "disabled" : ""} ${n === h ? "hovered" : ""}`,
+                      className: `${a === e.value ? "selected" : ""} ${e.disabled ? "disabled" : ""} ${n === h ? "hovered" : ""} ${e.danger ? "danger" : ""}`,
                       onClick: v,
                       onMouseOver: () => {
                         f(n);
