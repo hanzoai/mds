@@ -15909,20 +15909,19 @@ const aC = p.div(({}) => ({
                         width: i,
                         rowCount: $.length,
                         rowGetter: ({ index: e }) => $[e],
-                        onRowClick: ({ rowData: e }) => {
-                          ((e) => {
+                        onRowClick: ({ rowData: e, index: t }) =>
+                          ((e, t) => {
                             if (B) {
-                              const t = B.sendOnlyId && d ? e[Z] : e;
-                              let n = !1;
+                              const n = B.sendOnlyId && d ? e[Z] : e;
+                              let r = !1;
                               B.isDisabled &&
-                                (n =
+                                (r =
                                   "boolean" == typeof B.isDisabled
                                     ? B.isDisabled
                                     : B.isDisabled(e)),
-                                B.onClick && !n && B.onClick(t);
+                                B.onClick && !r && B.onClick(n, t);
                             }
-                          })(e);
-                        },
+                          })(e, t),
                         rowClassName: (e) =>
                           `rowLine ${B ? "canClick" : ""} ${!B && g ? "canSelectText" : ""} ${b ? b(e) : ""}`,
                         onRowsRendered: r,
