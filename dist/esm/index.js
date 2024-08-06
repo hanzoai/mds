@@ -1251,8 +1251,8 @@ const I = {
       titleColor: I.defaultFontColor,
     },
     screenTitle: {
-      subtitleColor: b["Color/Neutral/Text/colorTextLabel"].lightMode,
-      titleColor: b["Color/Neutral/Text/colorText"].lightMode,
+      subtitleColor: b["Color/Neutral/Text/colorTextTertiary"].lightMode,
+      titleColor: b["Color/Neutral/Text/colorTextHeading"].lightMode,
     },
     modalBox: {
       closeColor: B.modalCloseColor,
@@ -2039,8 +2039,8 @@ const I = {
       titleColor: Z.defaultFontColor,
     },
     screenTitle: {
-      subtitleColor: b["Color/Neutral/Text/colorTextLabel"].darkMode,
-      titleColor: b["Color/Neutral/Text/colorText"].darkMode,
+      subtitleColor: b["Color/Neutral/Text/colorTextTertiary"].darkMode,
+      titleColor: b["Color/Neutral/Text/colorTextHeading"].darkMode,
     },
     modalBox: {
       closeColor: Z.modalCloseColor,
@@ -16236,13 +16236,12 @@ const oC = p.div(({}) => ({
         "& .title": {
           fontSize: 12,
           fontStyle: "normal",
-          fontWeight: "normal",
+          fontWeight: 400,
           lineHeight: "16px",
-          letterSpacing: "0.5px",
           color: mn(
             e,
             "screenTitle.subtitleColor",
-            b["Color/Neutral/Text/colorTextLabel"].lightMode,
+            b["Color/Neutral/Text/colorTextTertiary"].lightMode,
           ),
         },
         "& .value": {
@@ -16250,7 +16249,6 @@ const oC = p.div(({}) => ({
           fontStyle: "normal",
           fontWeight: 600,
           lineHeight: "16px",
-          letterSpacing: "0.5px",
           color: mn(
             e,
             "screenTitle.subtitleColor",
@@ -16261,6 +16259,7 @@ const oC = p.div(({}) => ({
     },
     "& .leftItems": { display: "flex", alignItems: "flex-start", gap: 16 },
     "& .rightItems": { display: "flex", alignItems: "center", gap: 10 },
+    "& .optionElement": { display: "flex", gap: y.sizeXS },
     [`@media (max-width: ${mn(H, "md", 0)}px)`]: {
       "& .stContainer": {
         flexDirection: "column",
@@ -16347,17 +16346,25 @@ const oC = p.div(({}) => ({
         {
           item: !0,
           xs: !0,
-          sx: {
+          sx: (e) => ({
             display: "flex",
             flexGrow: 1,
             justifyContent: "flex-start",
             alignItems: "center",
             "& svg": { marginRight: "10px" },
-            "& h3": { fontWeight: "normal", fontSize: 20 },
-          },
+            "& .title": {
+              fontSize: 20,
+              fontStyle: "normal",
+              fontWeight: 600,
+              lineHeight: "28px",
+              margin: "12px 0",
+              color: e.colors["Color/Neutral/Text/colorTextHeading"],
+              padding: `${y.sizeXXS}px 0`,
+            },
+          }),
         },
         n,
-        t.createElement("h3", null, r),
+        t.createElement("span", { className: "title" }, r),
       ),
       o &&
         t.createElement(
@@ -17710,7 +17717,7 @@ const oC = p.div(({}) => ({
           borderRadius: "100%",
           width: 28,
           height: 28,
-          "& > svg": { width: 12, height: 12 },
+          "& > svg": { width: 18, height: 18 },
           "&:hover": {
             color: mn(e, "modalBox.closeHoverColor", "#EAEAEA"),
             backgroundColor: mn(e, "modalBox.closeHoverBG", "#000"),
@@ -75073,9 +75080,6 @@ const Kq = p.div(({ theme: e, editorHeight: t, sx: n }) => ({
       cursor: "not-allowed",
       color: e.colors["Color/Neutral/Text/colorTextDisabled"],
     },
-    "&:not(.disabled):hover": {
-      backgroundColor: mn(e, "boxBackground", I.boxBackground),
-    },
   })),
   vY = p.div(({ theme: e, expanded: t, backgroundColor: n }) => ({
     borderTop: 0,
@@ -88150,6 +88154,13 @@ const m0 = p.div(({ theme: e, sx: t, marginTop: n, separator: r }) => ({
             color: i,
             fill: i,
           },
+          "& span.dot": {
+            display: "inline-block",
+            width: 8,
+            height: 8,
+            backgroundColor: i,
+            borderRadius: "100%",
+          },
           ...l,
         }
       );
@@ -88190,7 +88201,8 @@ const m0 = p.div(({ theme: e, sx: t, marginTop: n, separator: r }) => ({
             default:
               e = null;
           }
-        else e = "dot" === c ? t.createElement(Ng, null) : c;
+        else
+          e = "dot" === c ? t.createElement("span", { className: "dot" }) : c;
       return e;
     }, [c, r]);
     return t.createElement(
