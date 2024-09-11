@@ -38146,21 +38146,18 @@ var pf = (function (e) {
       r = aa(e, gf);
     return Uc.jsx(zc, oa({}, r, { rehypePlugins: n, ref: t }));
   });
-const ff = m.div(({ theme: e, editorHeight: t, sx: n }) => ({
-    "& .editorContainer": {
-      maxHeight: t,
+const ff = m.div(({ theme: e, editorHeight: t, sx: n, horizontal: r }) => ({
+    display: "grid",
+    gridTemplateColumns: r ? "auto 1fr" : "1fr",
+    [`@media (max-width: ${H.md}px)`]: { gridTemplateColumns: "1fr" },
+    "& .inputLabel": { marginBottom: 10 },
+    "& .editorWrapper": {
       overflow: "auto",
       border: `${Cn(e, "borderColor", dn.borderColor)} 1px solid`,
-      borderTopLeftRadius: 4,
-      borderTopRightRadius: 4,
+      borderRadius: 4,
     },
-    "& .tooltipContainer": {
-      marginLeft: 5,
-      display: "flex",
-      alignItems: "center",
-      "& .min-icon": { width: 13 },
-    },
-    "& .mds-editor": {
+    "& .editorContainer": { overflow: "auto", maxHeight: t },
+    "& .editor": {
       "&.w-tc-editor": {
         fontSize: 12,
         backgroundColor: Cn(e, "codeEditor.backgroundColor", dn.white),
@@ -38215,13 +38212,10 @@ const ff = m.div(({ theme: e, editorHeight: t, sx: n }) => ({
       display: "flex",
       alignItems: "center",
       background: Cn(e, "codeEditor.helpToolsBarBG", sn.boxBackground),
-      border: `${Cn(e, "borderColor", dn.borderColor)} 1px solid`,
-      borderTop: 0,
+      borderBottom: `${Cn(e, "borderColor", dn.borderColor)} 1px solid`,
       padding: "2px",
       paddingRight: "5px",
       justifyContent: "flex-end",
-      borderBottomLeftRadius: 4,
-      borderBottomRightRadius: 4,
       "& button": {
         height: "26px",
         width: "26px",
@@ -38243,17 +38237,19 @@ const ff = m.div(({ theme: e, editorHeight: t, sx: n }) => ({
     className: s,
     helpTip: c,
     helpTipPlacement: d,
+    horizontal: u = !1,
   }) =>
     t.createElement(
       ff,
-      { sx: i, editorHeight: l, className: `codeEditor inputItem ${s}` },
+      {
+        sx: i,
+        editorHeight: l,
+        className: `codeEditor inputItem ${s}`,
+        horizontal: u,
+      },
       t.createElement(
         bo,
-        {
-          sx: { marginBottom: "10px", display: "flex", alignItems: "center" },
-          helpTip: c,
-          helpTipPlacement: d,
-        },
+        { className: "inputLabel", helpTip: c, helpTipPlacement: d },
         t.createElement("span", null, n),
         "" !== r &&
           t.createElement(
@@ -38268,19 +38264,23 @@ const ff = m.div(({ theme: e, editorHeight: t, sx: n }) => ({
       ),
       t.createElement(
         Tn,
-        { className: "editorContainer" },
-        t.createElement(hf, {
-          value: e,
-          language: o,
-          onChange: (e) => {
-            a(e.target.value);
-          },
-          id: "code_wrapper",
-          padding: 15,
-          className: "mds-editor",
-        }),
+        { className: "editorWrapper" },
+        C && t.createElement(Tn, { className: "actionsContainer" }, C),
+        t.createElement(
+          Tn,
+          { className: "editorContainer" },
+          t.createElement(hf, {
+            value: e,
+            language: o,
+            onChange: (e) => {
+              a(e.target.value);
+            },
+            id: "code_wrapper",
+            padding: 15,
+            className: "editor",
+          }),
+        ),
       ),
-      C && t.createElement(Tn, { className: "actionsContainer" }, C),
     ),
   Ef = m.textarea(({ theme: e, error: t }) => {
     let n = Cn(e, "inputBox.border", "#E2E2E2"),
