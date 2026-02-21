@@ -37,7 +37,6 @@ export interface ApplicationLogoProps {
     | "missioncontrol"
     | "globalconsole"
     | "storage"
-    | "minio"
     | "enterprise"
     | "aistor";
   subVariant?:
