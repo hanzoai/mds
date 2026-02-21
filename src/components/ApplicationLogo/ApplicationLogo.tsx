@@ -120,7 +120,6 @@ const ApplicationLogo: FC<ApplicationLogoProps> = ({
         default:
           return <AIStorTag inverse={!!inverse} onClick={onClick} />;
       }
-    case "minio":
     case "storage":
       switch (subVariant) {
         case "enterprise":
