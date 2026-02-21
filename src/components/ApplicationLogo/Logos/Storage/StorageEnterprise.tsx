@@ -18,7 +18,7 @@ import React, { FC, SVGProps } from "react";
 import LogoBase from "../LogoBase/LogoBase";
 import { LogoBaseProps } from "../LogoBase/LogoBase.types";
 
-const MinIOEnterprise: FC<SVGProps<any> & LogoBaseProps> = ({
+const StorageEnterprise: FC<SVGProps<any> & LogoBaseProps> = ({
   inverse,
   onClick,
 }) => {
@@ -31,36 +31,36 @@ const MinIOEnterprise: FC<SVGProps<any> & LogoBaseProps> = ({
               <rect
                 x="56.7"
                 y="-4.4"
-                className={"minioSection"}
+                className={"logoSection"}
                 width="9.7"
                 height="28.7"
               />
               <path
-                className={"minioSection"}
+                className={"logoSection"}
                 d="M45-4L25.3,8c-0.3,0.2-0.6,0.2-0.9,0L4.6-4C4.2-4.3,3.7-4.4,3.2-4.4h0c-1.5,0-2.7,1.2-2.7,2.7v25.9h9.7
 					V11.9c0-0.5,0.4-1,1-1c0.2,0,0.4,0,0.5,0.1l11,6.8c1.1,0.7,2.5,0.7,3.6,0L37.9,11c0.5-0.3,1.1-0.1,1.3,0.3
 					c0.1,0.1,0.1,0.3,0.1,0.5v12.4h9.7V-1.7c0-1.5-1.2-2.7-2.7-2.7c0,0,0,0,0,0h0C45.9-4.4,45.4-4.3,45-4z"
               />
               <path
-                className={"minioSection"}
+                className={"logoSection"}
                 d="M114.9-4.4H105v13c0,0.5-0.4,1-1,1c-0.2,0-0.3,0-0.5-0.1L78.1-4.1c-0.4-0.2-0.8-0.3-1.3-0.3h0
 					c-1.5,0-2.7,1.2-2.7,2.7v25.9h9.8v-13c0-0.5,0.4-1,1-1c0.2,0,0.3,0,0.5,0.1l25.6,13.6c0.4,0.2,0.8,0.3,1.3,0.3l0,0
 					c1.5,0,2.7-1.2,2.7-2.7L114.9-4.4z"
               />
             </g>
             <path
-              className={"minioSection"}
+              className={"logoSection"}
               d="M122.5,29.3V0.7h4.5v28.7H122.5z"
             />
             <path
-              className={"minioSection"}
+              className={"logoSection"}
               d="M153.2,29.8c-12,0-20.5-5.7-20.5-14.8c0-9.1,8.6-14.8,20.5-14.8c12,0,20.6,5.7,20.6,14.8
 				C173.8,24.1,165.4,29.8,153.2,29.8z M153.2,4c-8.9,0-15.8,3.9-15.8,11c0,7.2,6.9,11,15.8,11c8.9,0,15.9-3.9,15.9-11
 				C169.1,7.9,162.2,4,153.2,4L153.2,4z"
             />
           </g>
           <path
-            className={"minioApplicationName"}
+            className={"logoApplicationName"}
             d="M33.3,48.2h-9v-4.4h8.5v-2.4h-8.5v-4.3h8.8v-2.4H21.8v15.8h11.5V48.2z M54,34.8h-2.5v11.4l-8.8-11.4h-2.3v15.8h2.5l0-11.4
 			l8.8,11.4H54V34.8z M72.5,34.8H59.8v2.4h5.1v13.4h2.5V37.2h5.1L72.5,34.8z M89.8,48.2h-9v-4.4h8.5v-2.4h-8.5v-4.3h8.8v-2.4H78.2
 			v15.8h11.5V48.2z M96.8,34.8v15.8h2.5v-6.6h1.3l5,6.6h3.2l-5.2-6.6c3.2-0.1,5.3-1.9,5.3-4.6c0-2.9-2-4.6-5.6-4.6L96.8,34.8z
@@ -78,4 +78,4 @@ const MinIOEnterprise: FC<SVGProps<any> & LogoBaseProps> = ({
   );
 };
 
-export default MinIOEnterprise;
+export default StorageEnterprise;

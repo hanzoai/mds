@@ -23,16 +23,16 @@ const KMS: FC<SVGProps<any> & LogoBaseProps> = ({ inverse, onClick }) => {
     <LogoBase viewBox="0 0 184.538 51" inverse={inverse} onClick={onClick}>
       <g>
         <path
-          className={"minioApplicationName"}
+          className={"logoApplicationName"}
           d="M1.4,50.3V24.1h3.2v13h0.3l11.8-13h4.1l-11,11.8l11,14.4H17L7.9,38.1l-3.3,3.7v8.5H1.4z"
         />
         <path
-          className={"minioApplicationName"}
+          className={"logoApplicationName"}
           d="M24.9,24.1h3.8l8.9,21.7h0.3l8.9-21.7h3.8v26.2h-3V30.4h-0.3l-8.2,19.9h-2.9l-8.2-19.9h-0.3v19.9h-3
 		C24.9,50.3,24.9,24.1,24.9,24.1z"
         />
         <path
-          className={"minioApplicationName"}
+          className={"logoApplicationName"}
           d="M71.3,30.6c-0.2-1.3-0.8-2.3-1.9-3c-1.1-0.7-2.4-1.1-4-1.1c-1.2,0-2.2,0.2-3,0.6s-1.5,0.9-2,1.5
 		c-0.5,0.7-0.7,1.4-0.7,2.2c0,0.7,0.2,1.3,0.5,1.8c0.3,0.5,0.8,0.9,1.3,1.2c0.5,0.3,1.1,0.6,1.7,0.8c0.6,0.2,1.1,0.4,1.6,0.5
 		l2.7,0.7c0.7,0.2,1.4,0.4,2.3,0.7c0.8,0.3,1.6,0.7,2.4,1.3c0.8,0.5,1.4,1.2,1.9,2.1c0.5,0.8,0.8,1.9,0.8,3.1c0,1.4-0.4,2.7-1.1,3.8
@@ -45,27 +45,27 @@ const KMS: FC<SVGProps<any> & LogoBaseProps> = ({ inverse, onClick }) => {
         <rect
           x="22"
           y="0.5"
-          className={"minioSection"}
+          className={"logoSection"}
           width="3.8"
           height="11.1"
         />
         <path
-          className={"minioSection"}
+          className={"logoSection"}
           d="M17.4,0.6L9.7,5.3c-0.1,0.1-0.2,0.1-0.4,0L1.6,0.6C1.5,0.5,1.3,0.4,1.1,0.4h0C0.5,0.4,0,0.9,0,1.5v10.1h3.8
 		V6.8c0-0.3,0.3-0.5,0.6-0.3l4.3,2.6c0.4,0.3,1,0.3,1.4,0l4.6-2.7c0.3-0.1,0.6,0,0.6,0.3v4.8H19V1.5c0-0.6-0.5-1.1-1.1-1.1h0
 		C17.8,0.4,17.6,0.5,17.4,0.6L17.4,0.6z"
         />
         <path
-          className={"minioSection"}
+          className={"logoSection"}
           d="M44.7,0.5h-3.9v5.1c0,0.3-0.3,0.5-0.6,0.3l-10-5.3c-0.2-0.1-0.3-0.1-0.5-0.1h0c-0.6,0-1.1,0.5-1.1,1.1v10.1
 		h3.8v-5c0-0.3,0.3-0.5,0.6-0.3l10,5.3c0.2,0.1,0.3,0.1,0.5,0.1l0,0c0.6,0,1.1-0.5,1.1-1.1L44.7,0.5L44.7,0.5L44.7,0.5z"
         />
         <path
-          className={"minioSection"}
+          className={"logoSection"}
           d="M47.8,11.6V0.5h1.8v11.1L47.8,11.6L47.8,11.6z"
         />
         <path
-          className={"minioSection"}
+          className={"logoSection"}
           d="M59.8,11.9c-4.7,0-8-2.2-8-5.8c0-3.6,3.4-5.8,8-5.8c4.7,0,8.1,2.2,8.1,5.8S64.5,11.9,59.8,11.9z M59.8,1.7
 		c-3.5,0-6.2,1.5-6.2,4.3c0,2.8,2.7,4.3,6.2,4.3c3.5,0,6.2-1.5,6.2-4.3C66,3.3,63.3,1.7,59.8,1.7L59.8,1.7z"
         />

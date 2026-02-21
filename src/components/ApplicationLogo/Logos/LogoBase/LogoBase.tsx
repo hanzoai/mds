@@ -29,10 +29,10 @@ const LogoBase = styled.svg<SVGProps<any> & LogoBaseProps>((props) => {
   }
 
   return {
-    "& .minioSection": {
+    "& .logoSection": {
       fill: get(props, `theme.logoColor`, "#C51C3F"),
     },
-    "& .minioApplicationName": {
+    "& .logoApplicationName": {
       fill: mainColor,
     },
     "& .contrast": {

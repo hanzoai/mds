@@ -36,6 +36,7 @@ export interface ApplicationLogoProps {
     | "observe"
     | "missioncontrol"
     | "globalconsole"
+    | "storage"
     | "minio"
     | "enterprise"
     | "aistor";
