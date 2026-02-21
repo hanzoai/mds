@@ -22,7 +22,7 @@ import { lightColors } from "../../../global/themes";
 import Box from "../../Box/Box";
 import ApplicationLogo from "../../ApplicationLogo/ApplicationLogo";
 import Tooltip from "../../Tooltip/Tooltip";
-import MinIOTierIconXs from "../../Icons/MinIOTierIconXs";
+import StorageTierIconXs from "../../Icons/StorageTierIconXs";
 import MenuSectionHeader from "../Vertical/MenuSectionHeader";
 import MenuItem from "../Vertical/MenuItem";
 import LogoutIcon from "../../Icons/LogoutIcon";
@@ -112,7 +112,7 @@ const MobileMenuList: FC<MenuProps> = ({
           <Box className={"collapsedMenuHeader"}>
             <Tooltip tooltip={"Expand Menu"}>
               <span className={"collapsedIcon"}>
-                <MinIOTierIconXs />
+                <StorageTierIconXs />
               </span>
             </Tooltip>
           </Box>
