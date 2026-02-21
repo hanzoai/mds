@@ -40,9 +40,9 @@ import MissionControl from "./Logos/MissionControl/MissionControl";
 import GlobalConsole from "./Logos/Console/GlobalConsole";
 import ThemedLogo from "../ThemedLogo/ThemedLogo";
 import Enterprise from "./Logos/Enterprise/Enterprise";
-import MinIOEnterprise from "./Logos/MinIO/MinIOEnterprise";
-import MinIOEnterpriseOS from "./Logos/MinIO/MinIOEnterpriseOS";
-import MinIOEnterpriseOSVertical from "./Logos/MinIO/MinIOEnterpriseOSVertical";
+import StorageEnterprise from "./Logos/Storage/StorageEnterprise";
+import StorageEnterpriseOS from "./Logos/Storage/StorageEnterpriseOS";
+import StorageEnterpriseOSVertical from "./Logos/Storage/StorageEnterpriseOSVertical";
 import AIStor from "./Logos/AIStor/AIStor";
 import AIStorHorizontal from "./Logos/AIStor/AIStorHorizontal";
 import AIStorTag from "./Logos/AIStor/AIStorTag";
@@ -121,15 +121,16 @@ const ApplicationLogo: FC<ApplicationLogoProps> = ({
           return <AIStorTag inverse={!!inverse} onClick={onClick} />;
       }
     case "minio":
+    case "storage":
       switch (subVariant) {
         case "enterprise":
-          return <MinIOEnterprise inverse={!!inverse} onClick={onClick} />;
+          return <StorageEnterprise inverse={!!inverse} onClick={onClick} />;
           break;
         case "enterpriseos":
-          return <MinIOEnterpriseOS inverse={!!inverse} onClick={onClick} />;
+          return <StorageEnterpriseOS inverse={!!inverse} onClick={onClick} />;
         case "enterpriseosvertical":
           return (
-            <MinIOEnterpriseOSVertical inverse={!!inverse} onClick={onClick} />
+            <StorageEnterpriseOSVertical inverse={!!inverse} onClick={onClick} />
           );
         default:
           return <ThemedLogo onClick={onClick} />;
