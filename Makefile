@@ -1,13 +1,13 @@
 default: build
 
 build:
-	@(yarn install; yarn build;)
+	@(pnpm install; pnpm build;)
 
 lint:
-	@(yarn prettier --write . --loglevel warn; cd ..)
+	@(pnpm prettier --write . --loglevel warn; cd ..)
 
 test:
-	@(yarn install; yarn test;)
+	@(pnpm install; pnpm test;)
 
 test-warnings:
 	./check-warnings.sh
