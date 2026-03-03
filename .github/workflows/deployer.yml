@@ -27,8 +27,11 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: ${{ env.NVMRC }}
-          cache: "yarn"
-          cache-dependency-path: yarn.lock
+
+      - name: Install pnpm
+        uses: pnpm/action-setup@v4
+        with:
+          version: 9.15.0
 
       - name: Log in to private Docker registry
         run: echo "${{ secrets.REGISTRY_PASSWORD }}" | docker login ${{ secrets.REGISTRY_URL }} -u '${{ secrets.REGISTRY_USERNAME }}' --password-stdin
@@ -36,10 +39,9 @@ jobs:
       - name: Build Storybook
         run: |
           rm -Rf node_modules/
-          rm yarn.lock
-          yarn install
-          yarn build
-          yarn build-storybook 
+          pnpm install
+          pnpm build
+          pnpm build-storybook
           docker buildx build --platform linux/amd64 --push -t registry.min.dev/minio/mds .
           echo "${{ secrets.MDS_DEPLOYER_KUBECONFIG }}" > /tmp/kubecconfig
           ls -l /tmp/kubecconfig
