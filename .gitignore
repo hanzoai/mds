@@ -1,22 +1,22 @@
-# dependencies
-node_modules/
 
-# misc
-.DS_Store
-.env.local
-.env.development.local
-.env.test.local
-.env.production.local
-.idea/
-
-npm-debug.log*
-yarn-debug.log*
-yarn-error.log*
-
-.yarn/*
 !.yarn/cache
 !.yarn/patches
 !.yarn/plugins
 !.yarn/releases
 !.yarn/sdks
 !.yarn/versions
+.DS_Store
+.env.development.local
+.env.local
+.env.production.local
+.env.test.local
+.idea/
+.yarn/*
+**/dist/
+# dependencies
+# misc
+dist/
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
