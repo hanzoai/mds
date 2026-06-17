@@ -1,4 +1,4 @@
-# LLM.md - Hanzo Mds
+# Hanzo Mds
 
 ## Overview
 A MinIO Components Library
