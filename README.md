@@ -1,3 +1,5 @@
+<p align="center"><img src=".github/hero.svg" alt="mds" width="880"></p>
+
 # MinIO Design System
 
 The MinIO Design System is a design specification for all UI elements used in MinIO products.
