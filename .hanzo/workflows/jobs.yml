@@ -18,7 +18,7 @@ jobs:
     runs-on: ${{ matrix.os }}
     strategy:
       matrix:
-        os: [ubuntu-latest]
+        os: [hanzo-build-linux-amd64]
     steps:
       - name: Check out Code
         uses: actions/checkout@v3
